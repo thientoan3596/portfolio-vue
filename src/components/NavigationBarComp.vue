@@ -2,7 +2,6 @@
   <div
     class="sticky top-0 z-10 w-full py-2 text-lg dark:bg-dark-500 dark:text-gray-300 light:bg-white"
   >
-    <!-- <div class="w-full py-2 text-lg dark:bg-dark-500 dark:text-gray-300"> -->
     <div class="relative flex items-center justify-between px-4">
       <div class="text-2xl font-bold uppercase">Toan Luong</div>
       <span class="mx-2 block cursor-pointer text-3xl md:hidden">
@@ -22,7 +21,7 @@
         >
           <a
             href="https://drive.google.com/file/d/1W-gauF7PW1AY6_Fp0ZgU5WfHOqTEsq_h/view?usp=drive_link"
-            download
+            target="_blank"
             class="text-xl uppercase"
             >Resume</a
           >
