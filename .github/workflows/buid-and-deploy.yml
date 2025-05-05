@@ -1,50 +1,47 @@
-name: Build & Deploy Onto Github.io
+name: Deploy
 on:
   push:
-    tags:
-      - "v*"
-permissions:
-  contents: write
+    branches:
+      - main
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22.14.0"
-      - name: Install Dependencies
-        run: npm install
-      - name: Build App
-        run: npm run build -- --base=/${{ github.repository }}
-      - name: Archive artifact
-        shell: sh
-        run: |
-          tar \
-            --dereference --hard-dereference \
-            --directory "dist" \
-            -cvf "$RUNNER_TEMP/artifact.tar" \
-            --exclude=.git \
-            --exclude=.github \
-            .
-      - name: Upload artifact
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
-          path: ${{ runner.temp }}/artifact.tar
-          if-no-files-found: error
+          name: production-files
+          path: ./dist
 
   deploy:
+    name: Deploy
     needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
