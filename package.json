@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "cross-env NODE_ENV=dev vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -23,6 +23,7 @@
     "@types/node": "^22.15.3",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
+    "cross-env": "^7.0.3",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.3",
     "typescript": "~5.8.0",

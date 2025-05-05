@@ -36,18 +36,18 @@
         <!-- skills -->
         <h1 class="mb-4 text-2xl">Skills</h1>
         <div class="mb-3 grid grid-cols-4 gap-10 md:grid-cols-6">
-          <SkillComp :image="`/assets/Java.svg`" :tooltip="'Java'"/>
-          <SkillComp :image="`/assets/Spring.svg`" :tooltip="'Spring'"/>
-          <SkillComp :image="`/assets/Javascript.svg`" :tooltip="`Javascript`"/>
-          <SkillComp :image="`/assets/NodeJs.svg`" :tooltip="`NodeJs`"/>
-          <SkillComp :image="`/assets/C.svg`" :tooltip="'C'"/>
-          <SkillComp :image="`/assets/Python.svg`" :tooltip="'Python'"/>
-          <SkillComp :image="`/assets/MySQL.svg`" :tooltip="'MySQL'"/>
-          <SkillComp :image="`/assets/Vue.svg`" :tooltip="'Vue'"/>
-          <SkillComp :image="`/assets/HTML5.svg`" :tooltip="'HTML'"/>
-          <SkillComp :image="`/assets/CSS.svg`" :tooltip="'CSS'"/>
-          <SkillComp :image="`/assets/Git.svg`" :tooltip="'Git'"/>
-          <SkillComp :image="`/assets/Docker.svg`" :tooltip="'Docker'"/>
+          <SkillComp :image="`${base}/assets/Java.svg`" :tooltip="'Java'"/>
+          <SkillComp :image="`${base}/assets/Spring.svg`" :tooltip="'Spring'"/>
+          <SkillComp :image="`${base}/assets/Javascript.svg`" :tooltip="`Javascript`"/>
+          <SkillComp :image="`${base}/assets/NodeJs.svg`" :tooltip="`NodeJs`"/>
+          <SkillComp :image="`${base}/assets/C.svg`" :tooltip="'C'"/>
+          <SkillComp :image="`${base}/assets/Python.svg`" :tooltip="'Python'"/>
+          <SkillComp :image="`${base}/assets/MySQL.svg`" :tooltip="'MySQL'"/>
+          <SkillComp :image="`${base}/assets/Vue.svg`" :tooltip="'Vue'"/>
+          <SkillComp :image="`${base}/assets/HTML5.svg`" :tooltip="'HTML'"/>
+          <SkillComp :image="`${base}/assets/CSS.svg`" :tooltip="'CSS'"/>
+          <SkillComp :image="`${base}/assets/Git.svg`" :tooltip="'Git'"/>
+          <SkillComp :image="`${base}/assets/Docker.svg`" :tooltip="'Docker'"/>
           
         </div>
       </div>
@@ -58,7 +58,7 @@
           <!-- HCARE -->
           <div class="my-4 flex flex-col md:flex-row">
             <div class="md:w-7/10 md:hover:z-2 order-2 w-full md:order-1">
-              <VideoPlayerComp :src="'/assets/asm03_demo.mp4'"/>
+              <VideoPlayerComp :src="`${base}/assets/asm03_demo.mp4`"/>
               <!-- <img src="@/assets/asm03.png" alt="" /> -->
             </div>
             <div
@@ -120,13 +120,13 @@
               </div>
             </div>
             <div class="hover:z-3 md:w-7/10 w-full">
-              <VideoPlayerComp :src="'/assets/tdrive_demo_final.mp4'"/>
+              <VideoPlayerComp :src="`${base}/assets/tdrive_demo_final.mp4`"/>
             </div>
           </div>
           <!-- Donation Platform -->
           <div class="my-4 flex flex-col md:flex-row">
             <div class="md:w-7/10 md:hover:z-2 order-2 w-full md:order-1">
-              <VideoPlayerComp :src="'/assets/asm01_demo.mp4'"/>
+              <VideoPlayerComp :src="`${base}/assets/asm01_demo.mp4`"/>
             </div>
             <div
               class="md:w-3/10 order-1 w-full flex-col items-start md:order-2 md:ms-1 md:items-end"
@@ -187,13 +187,13 @@
               </div>
             </div>
             <div class="hover:z-3 md:w-7/10 w-full">
-              <VideoPlayerComp :src="'/assets/asm02_demo.mp4'"/>
+              <VideoPlayerComp :src="`${base}/assets/asm02_demo.mp4`"/>
             </div>
           </div>
           <!-- KPI Dashboard -->
           <div class="my-4 flex flex-col md:flex-row">
             <div class="md:w-7/10 md:hover:z-2 order-2 w-full md:order-1">
-              <VideoPlayerComp :src="'/assets/kpi_dashboard_demo.mp4'"/>
+              <VideoPlayerComp :src="`${base}/assets/kpi_dashboard_demo.mp4`"/>
             </div>
             <div
               class="md:w-3/10 order-1 w-full flex-col items-start md:order-2 md:ms-1 md:items-end"
@@ -252,7 +252,7 @@
               </div>
             </div>
             <div class="hover:z-3 md:w-7/10 w-full">
-              <VideoPlayerComp :src="'/assets/opencv_demo.mp4'"/>
+              <VideoPlayerComp :src="`${base}/assets/opencv_demo.mp4`"/>
             </div>
           </div>
         </div>
@@ -309,5 +309,9 @@
 <script setup lang="ts">
 import SkillComp from '@/components/SkillComp.vue';
 import VideoPlayerComp from '@/components/VideoPlayerComp.vue';
-
+import { onMounted } from 'vue';
+const base = import.meta.env.BASE_URL === "/" ?"":import.meta.env.BASE_URL ;
+onMounted(()=>{
+  console.log(base)
+})
 </script>

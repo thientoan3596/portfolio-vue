@@ -11,5 +11,6 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: "/portfolio-vue/",
+  base: process.env.NODE_ENV === "dev" ? "/" : "/portfolio-vue/",
+  // base: process.env.NODE_ENV === "dev" ? "/" : "/",
 });
