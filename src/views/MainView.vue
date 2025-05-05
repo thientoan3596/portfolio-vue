@@ -309,9 +309,5 @@
 <script setup lang="ts">
 import SkillComp from '@/components/SkillComp.vue';
 import VideoPlayerComp from '@/components/VideoPlayerComp.vue';
-import { onMounted } from 'vue';
 const base = import.meta.env.BASE_URL === "/" ?"":import.meta.env.BASE_URL ;
-onMounted(()=>{
-  console.log(base)
-})
 </script>
