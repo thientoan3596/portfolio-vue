@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+@theme {
+  --color-dark-500: #0a0a0a;
+  --color-dark-400: #303030;
+  --color-dark-300: #505050;
+  --color-dark-200: #707070;
+}
+html {
+  scroll-behavior: smooth;
+}
