@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex min-h-[93vh] w-full justify-center dark:bg-dark-500 dark:text-gray-400"
+    class="dark:bg-dark-500 flex min-h-[93vh] w-full justify-center dark:text-gray-400"
   >
     <div class="mb-5 flex w-[80%] flex-col gap-2 lg:w-[65%] xl:w-[50%]">
-      <div id="about-me" class="my-5 flex flex-col justify-center ">
+      <div id="about-me" class="my-5 flex flex-col justify-center">
         <!-- bio -->
         <div class="flex flex-col justify-center lg:flex-row">
-          <div class="order-2 w-full pr-5 lg:order-1 lg:w-7/10">
+          <div class="lg:w-7/10 order-2 w-full pr-5 lg:order-1">
             <h1 class="text-3xl">I'm Luong Thien Toan</h1>
             <p>
               I'm a student at Tallinn University of Technology (Estonia).
@@ -19,7 +19,7 @@
             </p>
           </div>
           <div
-            class="order-1 mb-5 flex w-full justify-center lg:order-2 lg:mt-10 lg:mb-0 lg:w-3/10"
+            class="lg:w-3/10 order-1 mb-5 flex w-full justify-center lg:order-2 lg:mb-0 lg:mt-10"
           >
             <div
               class="lg:aspect-ratio flex w-full items-center justify-center overflow-hidden lg:h-40 lg:w-40 lg:rounded-full dark:lg:bg-gray-400"
@@ -36,18 +36,18 @@
         <!-- skills -->
         <h1 class="mb-4 text-2xl">Skills</h1>
         <div class="mb-3 grid grid-cols-4 gap-10 md:grid-cols-6">
-          <SkillComp :image="`@/assets/Java.svg`" :tooltip="'Java'"/>
-          <SkillComp :image="`@/assets/Spring.svg`" :tooltip="'Spring'"/>
-          <SkillComp :image="`@/assets/Javascript.svg`" :tooltip="`Javascript`"/>
-          <SkillComp :image="`@/assets/NodeJs.svg`" :tooltip="`NodeJs`"/>
-          <SkillComp :image="`@/assets/C.svg`" :tooltip="'C'"/>
-          <SkillComp :image="`@/assets/Python.svg`" :tooltip="'Python'"/>
-          <SkillComp :image="`@/assets/MySQL.svg`" :tooltip="'MySQL'"/>
-          <SkillComp :image="`@/assets/Vue.svg`" :tooltip="'Vue'"/>
-          <SkillComp :image="`@/assets/HTML5.svg`" :tooltip="'HTML'"/>
-          <SkillComp :image="`@/assets/CSS.svg`" :tooltip="'CSS'"/>
-          <SkillComp :image="`@/assets/Git.svg`" :tooltip="'Git'"/>
-          <SkillComp :image="`@/assets/Docker.svg`" :tooltip="'Docker'"/>
+          <SkillComp :image="`/assets/Java.svg`" :tooltip="'Java'"/>
+          <SkillComp :image="`/assets/Spring.svg`" :tooltip="'Spring'"/>
+          <SkillComp :image="`/assets/Javascript.svg`" :tooltip="`Javascript`"/>
+          <SkillComp :image="`/assets/NodeJs.svg`" :tooltip="`NodeJs`"/>
+          <SkillComp :image="`/assets/C.svg`" :tooltip="'C'"/>
+          <SkillComp :image="`/assets/Python.svg`" :tooltip="'Python'"/>
+          <SkillComp :image="`/assets/MySQL.svg`" :tooltip="'MySQL'"/>
+          <SkillComp :image="`/assets/Vue.svg`" :tooltip="'Vue'"/>
+          <SkillComp :image="`/assets/HTML5.svg`" :tooltip="'HTML'"/>
+          <SkillComp :image="`/assets/CSS.svg`" :tooltip="'CSS'"/>
+          <SkillComp :image="`/assets/Git.svg`" :tooltip="'Git'"/>
+          <SkillComp :image="`/assets/Docker.svg`" :tooltip="'Docker'"/>
           
         </div>
       </div>
@@ -57,18 +57,18 @@
         <div class="project flex flex-col gap-2 py-4">
           <!-- HCARE -->
           <div class="my-4 flex flex-col md:flex-row">
-            <div class="order-2 w-full md:order-1 md:w-7/10 md:hover:z-2">
-              <VideoPlayerComp :src="'@/assets/asm03_demo.mp4'"/>
+            <div class="md:w-7/10 md:hover:z-2 order-2 w-full md:order-1">
+              <VideoPlayerComp :src="'/assets/asm03_demo.mp4'"/>
               <!-- <img src="@/assets/asm03.png" alt="" /> -->
             </div>
             <div
-              class="order-1 w-full flex-col items-start md:order-2 md:ms-1 md:w-3/10 md:items-end"
+              class="md:w-3/10 order-1 w-full flex-col items-start md:order-2 md:ms-1 md:items-end"
             >
-              <h3 class="my-2 text-xl md:mb-5 md:text-right dark:text-white">
+              <h3 class="my-2 text-xl dark:text-white md:mb-5 md:text-right">
                 Health Appointment System
               </h3>
               <div
-                class="mb-2 w-full md:z-1 md:mb-0 md:-ml-[50%] md:w-[150%] md:overflow-x-auto md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
+                class="md:z-1 mb-2 w-full md:-ml-[50%] md:mb-0 md:w-[150%] md:overflow-x-auto md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
               >
                 <p>
                   A fully functional health check-up booking system with desired
@@ -93,13 +93,13 @@
           <!-- TDRIVE -->
           <div class="my-4 flex flex-col md:flex-row">
             <div
-              class="md:items-between w-full flex-col items-start md:ms-1 md:w-3/10 "
+              class="md:items-between md:w-3/10 w-full flex-col items-start md:ms-1"
             >
-              <h3 class="my-2 text-xl md:mb-5 md:text-left dark:text-white">
+              <h3 class="my-2 text-xl dark:text-white md:mb-5 md:text-left">
                 TDRIVE
               </h3>
               <div
-                class="relative mb-2 w-full overflow-auto  md:z-2 md:-mr-[50%] md:mb-0 md:w-[150%] md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
+                class="md:z-2 relative mb-2 w-full overflow-auto md:-mr-[50%] md:mb-0 md:w-[150%] md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
               >
                 <p>
                   A Goolge-Drive like platform, where user can store files remotely.
@@ -119,23 +119,23 @@
                 </div>
               </div>
             </div>
-            <div class="w-full hover:z-3 md:w-7/10">
-              <VideoPlayerComp :src="'@/assets/tdrive_demo_final.mp4'"/>
+            <div class="hover:z-3 md:w-7/10 w-full">
+              <VideoPlayerComp :src="'/assets/tdrive_demo_final.mp4'"/>
             </div>
           </div>
           <!-- Donation Platform -->
           <div class="my-4 flex flex-col md:flex-row">
-            <div class="order-2 w-full md:order-1 md:w-7/10 md:hover:z-2">
-              <VideoPlayerComp :src="'@/assets/asm01_demo.mp4'"/>
+            <div class="md:w-7/10 md:hover:z-2 order-2 w-full md:order-1">
+              <VideoPlayerComp :src="'/assets/asm01_demo.mp4'"/>
             </div>
             <div
-              class="order-1 w-full flex-col items-start md:order-2 md:ms-1 md:w-3/10 md:items-end"
+              class="md:w-3/10 order-1 w-full flex-col items-start md:order-2 md:ms-1 md:items-end"
             >
-              <h3 class="my-2 text-xl md:mb-5 md:text-right dark:text-white">
+              <h3 class="my-2 text-xl dark:text-white md:mb-5 md:text-right">
                 Fund Raising For Underprivileged
               </h3>
               <div
-                class="mb-2 w-full md:z-1 md:mb-0 md:-ml-[50%] md:w-[150%] md:overflow-x-auto md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
+                class="md:z-1 mb-2 w-full md:-ml-[50%] md:mb-0 md:w-[150%] md:overflow-x-auto md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
               >
                 <p>
                   Fund Raising platform, whereas "admin" can create donations to support underprivileged, and special cases.
@@ -159,13 +159,13 @@
           <!-- JOB-Seeking Solution -->
           <div class="my-4 flex flex-col md:flex-row">
             <div
-              class="md:items-between w-full flex-col items-start md:ms-1 md:w-3/10 "
+              class="md:items-between md:w-3/10 w-full flex-col items-start md:ms-1"
             >
-              <h3 class="my-2 text-xl md:mb-5 md:text-left dark:text-white">
+              <h3 class="my-2 text-xl dark:text-white md:mb-5 md:text-left">
                 Jobs Seeking Solution
               </h3>
               <div
-                class="relative mb-2 w-full overflow-auto  md:z-2 md:-mr-[50%] md:mb-0 md:w-[150%] md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
+                class="md:z-2 relative mb-2 w-full overflow-auto md:-mr-[50%] md:mb-0 md:w-[150%] md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
               >
                 <p>
                   A Jobs Seeking website for both recruiters and job-seekers, whereas recruiter can represent a company, to create/delete/edit job post.
@@ -186,23 +186,23 @@
                 </div>
               </div>
             </div>
-            <div class="w-full hover:z-3 md:w-7/10">
-              <VideoPlayerComp :src="'@/assets/asm02_demo.mp4'"/>
+            <div class="hover:z-3 md:w-7/10 w-full">
+              <VideoPlayerComp :src="'/assets/asm02_demo.mp4'"/>
             </div>
           </div>
           <!-- KPI Dashboard -->
           <div class="my-4 flex flex-col md:flex-row">
-            <div class="order-2 w-full md:order-1 md:w-7/10 md:hover:z-2">
-              <VideoPlayerComp :src="'@/assets/kpi_dashboard_demo.mp4'"/>
+            <div class="md:w-7/10 md:hover:z-2 order-2 w-full md:order-1">
+              <VideoPlayerComp :src="'/assets/kpi_dashboard_demo.mp4'"/>
             </div>
             <div
-              class="order-1 w-full flex-col items-start md:order-2 md:ms-1 md:w-3/10 md:items-end"
+              class="md:w-3/10 order-1 w-full flex-col items-start md:order-2 md:ms-1 md:items-end"
             >
-              <h3 class="my-2 text-xl md:mb-5 md:text-right dark:text-white">
+              <h3 class="my-2 text-xl dark:text-white md:mb-5 md:text-right">
                 KPI Dashboard
               </h3>
               <div
-                class="mb-2 w-full md:z-1 md:mb-0 md:-ml-[50%] md:w-[150%] md:overflow-x-auto md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
+                class="md:z-1 mb-2 w-full md:-ml-[50%] md:mb-0 md:w-[150%] md:overflow-x-auto md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
               >
                 <p>
                   A continuation of the aforementioned project, where importants metrics are monitored and watched to give in time action.
@@ -226,13 +226,13 @@
           <!-- Color Delection -->
           <div class="my-4 flex flex-col md:flex-row">
             <div
-              class="md:items-between w-full flex-col items-start md:ms-1 md:w-3/10 "
+              class="md:items-between md:w-3/10 w-full flex-col items-start md:ms-1"
             >
-              <h3 class="my-2 text-xl md:mb-5 md:text-left dark:text-white">
+              <h3 class="my-2 text-xl dark:text-white md:mb-5 md:text-left">
                 Color Detection
               </h3>
               <div
-                class="relative mb-2 w-full overflow-auto  md:z-2 md:-mr-[50%] md:mb-0 md:w-[150%] md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
+                class="md:z-2 relative mb-2 w-full overflow-auto md:-mr-[50%] md:mb-0 md:w-[150%] md:rounded-sm md:bg-emerald-200 md:p-2 md:text-black"
               >
                 <p>
                   A simple project simulate the situations in the manufacturing pipeline, where counting the products could be completed bases on the color difference via surveillance camera.
@@ -251,8 +251,8 @@
                 </div>
               </div>
             </div>
-            <div class="w-full hover:z-3 md:w-7/10">
-              <VideoPlayerComp :src="'@/assets/opencv_demo.mp4'"/>
+            <div class="hover:z-3 md:w-7/10 w-full">
+              <VideoPlayerComp :src="'/assets/opencv_demo.mp4'"/>
             </div>
           </div>
         </div>
