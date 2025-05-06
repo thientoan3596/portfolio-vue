@@ -20,7 +20,7 @@
           class="mx-2 my-6 md:my-0 hover:dark:text-gray-100 hover:light:font-semibold"
         >
           <a
-            href="https://drive.google.com/file/d/1W-gauF7PW1AY6_Fp0ZgU5WfHOqTEsq_h/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1NjmZjTTMABbP-tnOH52cXAmz1YbyJKtE/view?usp=drive_link"
             target="_blank"
             class="text-xl uppercase"
             >Resume</a
